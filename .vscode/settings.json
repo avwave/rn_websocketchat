@@ -1,0 +1,21 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "javascript.format.enable": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "html.format.endWithNewline": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "files.eol": "\n",
+  "prettier.eslintIntegration": true,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#93b64b",
+  },
+}
