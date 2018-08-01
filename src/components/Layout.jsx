@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import MessagesList from './MessagesList';
 import AddMessage from './AddMessage';
-import { BASE_URL } from '../settings';
 
 import { store, sagaMiddleware } from '../App';
 import setupSocket from '../sockets';
 import { handleBeginChat, handleNewMessage } from '../sagas';
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 class Layout extends Component {
   state = {
