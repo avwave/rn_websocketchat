@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 
 let nextMessageId = 0;
-let nextUserId = 0;
+const nextUserId = 0;
 
 export const addMessage = (message, author) => {
   return {
@@ -14,7 +14,6 @@ export const addMessage = (message, author) => {
 export const beginChat = (userid) => {
   return {
     type: types.BEGIN_CHAT,
-    id: nextUserId++,
     userid,
   };
 };

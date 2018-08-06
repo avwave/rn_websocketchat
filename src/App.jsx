@@ -23,9 +23,10 @@ const token = sessionStorage.getItem('token');
 const email = sessionStorage.getItem('email');
 
 if (token && email) {
-  const socket = setupSocket(store.dispatch, token);
-  sagaMiddleware.run(handleNewMessage, { socket, username: email });
-  sagaMiddleware.run(handleBeginChat, { socket });
+  setupSocket(store.dispatch, token).then((socket) => {
+    sagaMiddleware.run(handleNewMessage, { socket, username: email });
+    sagaMiddleware.run(handleBeginChat, { socket });
+  });
 }
 
 class App extends Component {
@@ -33,6 +34,8 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
+  componentWillMount() {}
 
   render() {
     return (

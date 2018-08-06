@@ -34,7 +34,7 @@ class Layout extends Component {
       sessionStorage.setItem('token', response.data.key);
       sessionStorage.setItem('email', response.data.user.email);
 
-      const socket = setupSocket(store.dispatch, this.state.token);
+      const socket = await setupSocket(store.dispatch, response.data.key);
       sagaMiddleware.run(handleNewMessage, { socket, username: this.state.email });
       sagaMiddleware.run(handleBeginChat, { socket });
 
