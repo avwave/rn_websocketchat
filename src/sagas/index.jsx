@@ -13,7 +13,9 @@ const handleNewMessage = function* handleNewMessage(params) {
 const handleBeginChat = function* handleBeginChat(params) {
   yield takeEvery(types.BEGIN_CHAT, (action) => {
     console.log(params);
-    // params   .socket   .send(JSON.stringify(action));
+    params
+      .socket
+      .send(JSON.stringify(action));
   });
 };
 
